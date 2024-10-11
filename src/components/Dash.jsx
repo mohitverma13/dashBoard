@@ -26,7 +26,7 @@ const blogPosts = [
 const Dashboard = () => {
     return (
         <div className="p-4 max-w-7xl mx-auto">
-            <header className="flex justify-between items-center mb-6">
+            <header className="flex justify-between items-center mb-5">
                 <h1 className="text-2xl font-bold">Dashboard</h1>
                 <div className="flex space-x-2">
                     <Button variant="outline">Create course</Button>
