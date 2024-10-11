@@ -1,9 +1,11 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid } from 'recharts';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Clock, Users, RefreshCcw, ShoppingBag, BookOpen, Tag } from 'lucide-react';
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+
 import heartbeat from './../assets/heartbeat.svg'
 import sandClock from './../assets/sandClock.svg'
 
@@ -58,6 +60,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </CardHeader>
+{/* 
                     <CardContent>
                         <ResponsiveContainer width="100%" height={200}>
                             <LineChart data={data}>
@@ -66,7 +69,31 @@ const Dashboard = () => {
                                 <Line type="monotone" dataKey="users" stroke="#14b8a6" />
                             </LineChart>
                         </ResponsiveContainer>
+                    </CardContent> */}
+
+                    <CardContent>
+                        <ChartContainer
+                            config={{
+                                users: {
+                                    label: "New Users",
+                                    color: "hsl(var(--primary))",
+                                },
+                            }}
+                            className="h-[300px] w-full"  // Adjusts height as per requirement
+                        >
+                            <ResponsiveContainer width="100%" height={200}>
+                                <LineChart data={data}>
+                                    <CartesianGrid strokeDasharray="3 3" />
+                                    <XAxis dataKey="date" />
+                                    <YAxis />
+                                    <ChartTooltip content={<ChartTooltipContent />} />
+                                    <Line type="monotone" dataKey="users" stroke="#14b8a6" />
+                                </LineChart>
+                            </ResponsiveContainer>
+                        </ChartContainer>
                     </CardContent>
+
+
                 </Card>
 
                 <div className="grid grid-cols-3 gap-2 mb-6 ">

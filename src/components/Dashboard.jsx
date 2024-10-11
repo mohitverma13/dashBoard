@@ -73,6 +73,27 @@ export default function Dashboard() {
                                 </ResponsiveContainer>
                             </ChartContainer>
                         </TabsContent>
+                        <TabsContent value="new-signups">
+                            <ChartContainer
+                                config={{
+                                    users: {
+                                        label: "New Users",
+                                        color: "hsl(var(--primary))",
+                                    },
+                                }}
+                                className="h-[300px]"
+                            >
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <LineChart data={data}>
+                                        <CartesianGrid strokeDasharray="3 3" />
+                                        <XAxis dataKey="date" />
+                                        <YAxis />
+                                        <ChartTooltip content={<ChartTooltipContent />} />
+                                        <Line type="monotone" dataKey="users" stroke="var(--color-users)" strokeWidth={2} />
+                                    </LineChart>
+                                </ResponsiveContainer>
+                            </ChartContainer>
+                        </TabsContent>
                     </Tabs>
                 </CardContent>
             </Card>
