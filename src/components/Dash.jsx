@@ -136,7 +136,7 @@ const Dashboard = () => {
                     </Card>
                 </div>
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4  gap-4">
                 <Card className='h-[10rem]'>
                     <CardHeader className='flex flex-row justify-start items-center'>
                         <Users className="w-6 h-6 text-gray-400 mr-2" />
