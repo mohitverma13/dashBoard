@@ -194,36 +194,90 @@ const Dashboard = () => {
                     </CardHeader>
                     <CardContent>
                         <div className='flex justify-between'>
-                        <div className="flex gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 mt-2">
-                                <path fillRule="evenodd" d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z" clipRule="evenodd" />
-                            </svg>
+                            <div className="flex gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 mt-2">
+                                    <path fillRule="evenodd" d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z" clipRule="evenodd" />
+                                </svg>
 
-                            <div className='flex flex-col justify-start items-start'>
-                                <p className="text-[#56ccc0]">hubx</p>
-                                <p className="text-sm text-gray-500">Logged in</p>
-                                <p className="text-sm text-[#56ccc0]">more info</p>
+                                <div className='flex flex-col justify-start items-start'>
+                                    <p className="text-[#56ccc0]">hubx</p>
+                                    <p className="text-sm text-gray-500">Logged in</p>
+                                    <p className="text-sm text-[#56ccc0]">more info</p>
+                                </div>
                             </div>
-                        </div>
-                        <p className="text-gray-500 ml-2 text-sm">22min ago</p>
+                            <p className="text-gray-500 ml-2 text-sm">22min ago</p>
                         </div>
                     </CardContent>
                 </Card>
-                <Card>
+                <div>
+                    <Card>
+                        <CardHeader>
+                            <div className='flex  flex-col items-start gap-2'>
+                                <h3 className="text-lg font-semibold ml-2">Trial period</h3>
+                                <div className='relative w-28 h-28 flex flex-col items-center justify-center'>
+                                    <div className='absolute inset-0 rounded-full border-4 border-white shadow-2xl ' />
+                                    <div className='bg-teal-500 w-full h-full rounded-full flex flex-col items-center justify-center shadow-lg shadow-gray-20000 '>
+                                        <p className="text-2xl font-bold text-white">30</p>
+                                        <p className="text-white">DAYS LEFT</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </CardHeader>
+                        {/* <CardContent className="flex flex-col items-center">
+                            <div className="relative w-32 h-32">
+                                <div className="absolute inset-0 border-8 border-teal-500 rounded-full"></div>
+                                <div className="absolute inset-0 flex items-center justify-center flex-col">
+                                    <p className="text-2xl font-bold ">30</p>
+                                    <p className=" ">DAYS LEFT</p>
+
+                                </div>
+                            </div>
+                            <Button className="mt-4 bg-pink-500 text-white">Upgrade now!</Button>
+                        </CardContent> */}
+                    </Card>
+                    {/* <Card>
                     <CardHeader>
                         <h3 className="text-lg font-semibold">Trial period</h3>
                     </CardHeader>
                     <CardContent className="flex flex-col items-center">
                         <div className="relative w-32 h-32">
                             <div className="absolute inset-0 border-8 border-teal-500 rounded-full"></div>
-                            <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="absolute inset-0 flex items-center justify-center flex-col">
                                 <p className="text-3xl font-bold">30</p>
+                                <p className="text-3xl font-bold">DAYS LEFT</p>
+
                             </div>
                         </div>
                         <p className="mt-2 text-sm text-gray-500">DAYS LEFT</p>
                         <Button className="mt-4 bg-pink-500 text-white">Upgrade now!</Button>
                     </CardContent>
-                </Card>
+                </Card> */}
+
+                    <Card className='h-[10rem]'>
+                        <CardHeader className='flex flex-row justify-start items-center'>
+                            <img src={heartbeat} alt="" height={30} width={30} />
+                            <h4 className='ml-2'>Event log</h4>
+                            <button className='bg-[#3bd7c5] rounded-xl text-sm w-[50px] flex items-center justify-center mx-2'> see all</button>
+                        </CardHeader>
+                        <CardContent>
+                            <div className='flex justify-between'>
+                                <div className="flex gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 mt-2">
+                                        <path fillRule="evenodd" d="M15.75 1.5a6.75 6.75 0 0 0-6.651 7.906c.067.39-.032.717-.221.906l-6.5 6.499a3 3 0 0 0-.878 2.121v2.818c0 .414.336.75.75.75H6a.75.75 0 0 0 .75-.75v-1.5h1.5A.75.75 0 0 0 9 19.5V18h1.5a.75.75 0 0 0 .53-.22l2.658-2.658c.19-.189.517-.288.906-.22A6.75 6.75 0 1 0 15.75 1.5Zm0 3a.75.75 0 0 0 0 1.5A2.25 2.25 0 0 1 18 8.25a.75.75 0 0 0 1.5 0 3.75 3.75 0 0 0-3.75-3.75Z" clipRule="evenodd" />
+                                    </svg>
+
+                                    <div className='flex flex-col justify-start items-start'>
+                                        <p className="text-[#56ccc0]">hubx</p>
+                                        <p className="text-sm text-gray-500">Logged in</p>
+                                        <p className="text-sm text-[#56ccc0]">more info</p>
+                                    </div>
+                                </div>
+                                <p className="text-gray-500 ml-2 text-sm">22min ago</p>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                </div>
             </div>
         </div>
     );
