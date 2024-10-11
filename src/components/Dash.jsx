@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Clock, Users, RefreshCcw, ShoppingBag, BookOpen, Tag } from 'lucide-react';
 import heartbeat from './../assets/heartbeat.svg'
+import sandClock from './../assets/sandClock.svg'
 
 const data = [
     { date: '2021-02-03', users: 0 },
@@ -210,19 +211,65 @@ const Dashboard = () => {
                     </CardContent>
                 </Card>
                 <div>
-                    <Card>
+                    <Card className='flex justify-evenly'>
                         <CardHeader>
+                            <div className='flex  flex-col items-start gap-2'>
+                                <div className='flex justify-between'>
+                                    <h3 className="text-lg font-semibold ml-2">Trial period</h3>
+                                    <img src={sandClock} alt="" width={40} className='ml-[5rem]' />
+                                </div>
+                                <div className='flex gap-4 justify-between'>
+                                <div className='relative w-28 h-28 flex flex-col items-center justify-center'>
+                                    <div className='absolute inset-0 rounded-full border-4 border-white shadow-2xl ' />
+                                    <div className='bg-teal-500 w-full h-full rounded-full flex flex-col items-center justify-center shadow-lg shadow-gray-200 '>
+                                        <p className="text-2xl font-bold text-white">30</p>
+                                        <p className="text-white">DAYS LEFT</p>
+                                    </div>
+                                </div>
+                                <Button className="mt-[7rem] bg-pink-500 text-white rounded-3xl h-[30px]">Upgrade now!</Button>
+                                </div>
+                            </div>
+                        </CardHeader>
+                        {/* <CardHeader>
+                            <div className='flex flex-col items-start gap-16'>
+                                <img src={sandClock} alt="" width={40} className='ml-9' />
+                                <button className="mt-4 bg-pink-500 text-white h-[25px] w-[120px] rounded-2xl mr-8" >Upgrade now </button>
+                            </div>
+                        </CardHeader> */}
+
+                        {/* <CardHeader>
                             <div className='flex  flex-col items-start gap-2'>
                                 <h3 className="text-lg font-semibold ml-2">Trial period</h3>
                                 <div className='relative w-28 h-28 flex flex-col items-center justify-center'>
                                     <div className='absolute inset-0 rounded-full border-4 border-white shadow-2xl ' />
-                                    <div className='bg-teal-500 w-full h-full rounded-full flex flex-col items-center justify-center shadow-lg shadow-gray-20000 '>
+                                    <div className='bg-teal-500 w-full h-full rounded-full flex flex-col items-center justify-center shadow-lg shadow-gray-200 '>
                                         <p className="text-2xl font-bold text-white">30</p>
                                         <p className="text-white">DAYS LEFT</p>
                                     </div>
                                 </div>
                             </div>
                         </CardHeader>
+                        <CardHeader>
+                            <div className='flex flex-col items-start gap-16'>
+                                <img src={sandClock} alt="" width={40} className='ml-9'/>
+                                <button className="mt-4 bg-pink-500 text-white h-[25px] w-[120px] rounded-2xl mr-8" >Upgrade now </button>
+                            </div>
+                        </CardHeader> */}
+
+
+
+
+                        {/* <div className='flex  flex-col items-start gap-2'>
+                                <h3 className="text-lg font-semibold ml-2">Trial period</h3>
+                                <div className='relative w-28 h-28 flex flex-col items-center justify-center'>
+                                    <div className='absolute inset-0 rounded-full border-4 border-white shadow-2xl ' />
+                                    <div className='bg-teal-500 w-full h-full rounded-full flex flex-col items-center justify-center shadow-lg shadow-gray-200 '>
+                                        <p className="text-2xl font-bold text-white">30</p>
+                                        <p className="text-white">DAYS LEFT</p>
+                                    </div>
+                                </div>
+                            </div> */}
+
                         {/* <CardContent className="flex flex-col items-center">
                             <div className="relative w-32 h-32">
                                 <div className="absolute inset-0 border-8 border-teal-500 rounded-full"></div>
