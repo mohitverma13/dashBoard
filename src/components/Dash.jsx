@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid } from 'recharts';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,6 +9,7 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/
 
 import heartbeat from './../assets/heartbeat.svg'
 import sandClock from './../assets/sandClock.svg'
+import CalculatorContainer from './CalculatorContainer';
 
 const data = [
     { date: '2021-02-03', users: 0 },
@@ -28,9 +30,10 @@ const blogPosts = [
 ];
 
 const Dashboard = () => {
+    // const [isShareModalOpen, setIsShareModalOpen] = useState(false)
     return (
         <div className="p-4 max-w-7xl mx-auto">
-            <header className="flex justify-between items-center mb-5">
+            {/* <header className="flex justify-between items-center mb-5">
                 <h1 className="text-2xl font-bold">Dashboard</h1>
                 <div className="flex space-x-2">
                     <Button variant="outline">Create course</Button>
@@ -38,7 +41,7 @@ const Dashboard = () => {
                     <Button variant="outline">Preview after login page</Button>
                     <Button variant="outline">View welcome screen</Button>
                 </div>
-            </header>
+            </header> */}
 
             <div className='flex'>
 
@@ -60,7 +63,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </CardHeader>
-{/* 
+                    {/* 
                     <CardContent>
                         <ResponsiveContainer width="100%" height={200}>
                             <LineChart data={data}>
@@ -166,39 +169,33 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="grid grid-cols-4  gap-4">
-                <Card className='h-[10rem]'>
-                    <CardHeader className='flex flex-row justify-start items-center'>
-                        <Users className="w-6 h-6 text-gray-400 mr-2" />
-                        <h4>New users</h4>
-                        <button className='bg-[#3bd7c5] rounded-xl text-sm w-[50px] flex items-center justify-center mx-2'> see all</button>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="flex items-center">
-                            <Avatar className="mr-2">
-                                <AvatarImage src="/placeholder-avatar.jpg" />
-                                <AvatarFallback>HX</AvatarFallback>
-                            </Avatar>
-
-                            <div className='flex flex-col justify-start items-start'>
-                                <p className="font">hubx</p>
-                                <p className="text-sm text-gray-500">24 minutes ago</p>
-                            </div>
-
-                            {/* <div className='flex'>
-                                <div className="w-[40px] h-[40px] bg-gray-00 text-center flex justify-center items-center">
-                                    <div>HX</div>
-                                </div>
+                <div>
+                    <Card className='h-[10rem]'>
+                        <CardHeader className='flex flex-row justify-start items-center'>
+                            <Users className="w-6 h-6 text-gray-400 mr-2" />
+                            <h4>New users</h4>
+                            <button className='bg-[#3bd7c5] rounded-xl text-sm w-[50px] flex items-center justify-center mx-2'> see all</button>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="flex items-center">
+                                <Avatar className="mr-2">
+                                    <AvatarImage src="/placeholder-avatar.jpg" />
+                                    <AvatarFallback>HX</AvatarFallback>
+                                </Avatar>
 
                                 <div className='flex flex-col justify-start items-start'>
-                                <p className="font">hubx</p>
-                                <p className="text-sm text-gray-500">24 minutes ago</p>
+                                    <p className="font">hubx</p>
+                                    <p className="text-sm text-gray-500">24 minutes ago</p>
                                 </div>
-                            </div> */}
+                            </div>
+                            <div>
+                                Button
+                            </div>
+                        </CardContent>
+                    </Card>
 
-
-                        </div>
-                    </CardContent>
-                </Card>
+                    <CalculatorContainer></CalculatorContainer>
+                </div>
                 <Card>
                     <CardHeader>
                         <h3 className="text-lg font-semibold">How to sell courses blog</h3>
