@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Clock, Users, RefreshCcw, ShoppingBag, BookOpen, Tag } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import BlogPostCard from './BlogPostCard';
 
 import heartbeat from './../assets/heartbeat.svg'
 import sandClock from './../assets/sandClock.svg'
@@ -43,26 +44,30 @@ const Dashboard = () => {
                 </div>
             </header> */}
 
-            <div className='flex'>
+            <Card className='grid grid-cols-6 h-[22rem] mb-2'>
 
-                <Card className="mb-6 w-10/12">
-                    <CardHeader>
+                <CardContent className="mb-6 col-span-4">
+                    <div>
                         <div className="flex justify-between items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
                             </svg>
                             <h2 className="text-xl">Your school</h2>
                             <div className="flex space-x-2">
-                                <Button variant="ghost" className="text-teal-500 border-b-2 border-teal-500">New signups</Button>
+                                <Button variant="ghost" className="text-teal-500 border-b-2 rounded-lg border-teal-500">New signups</Button>
                                 <Button variant="ghost">Revenue</Button>
                                 <Button variant="ghost">Product sales</Button>
                                 <Button variant="ghost">Active learners</Button>
                                 <select className="border rounded px-2 py-1">
                                     <option>Last 7 days</option>
+                                    <option>Last 15 days</option>
+                                    <option>Last 30 days</option>
+                                    <option>Last 1 Month</option>
+                                    <option>Last 6 Month</option>
                                 </select>
                             </div>
                         </div>
-                    </CardHeader>
+                    </div>
                     {/* 
                     <CardContent>
                         <ResponsiveContainer width="100%" height={200}>
@@ -97,10 +102,21 @@ const Dashboard = () => {
                     </CardContent>
 
 
-                </Card>
+                </CardContent>
 
-                <div className="grid grid-cols-3 gap-2 mb-6 ">
-                    <Card>
+                <CardContent className="grid grid-cols-3 gap-2 mb-6 col-span-2">
+                    <div>
+                        <div className="flex items-center justify-center p-4">
+                            <div className="flex items-center flex-col justify-center">
+                                <Users className="w-6 h-6 text-gray-400 mr-2" />
+                                <div>
+                                    <p className="text-sm text-gray-500">All users</p>
+                                    <p className="text-2xl">1</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <Card>
                         <CardContent className="flex items-center justify-center p-4">
                             <div className="flex items-center flex-col justify-center">
                                 <Users className="w-6 h-6 text-gray-400 mr-2" />
@@ -110,9 +126,9 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         </CardContent>
-                    </Card>
-                    <Card>
-                        <CardContent className="flex items-center justify-center p-4">
+                    </Card> */}
+                    <div>
+                        <div className="flex items-center justify-center p-4">
                             <div className="flex items-center flex-col justify-center">
                                 <RefreshCcw className="w-6 h-6 text-gray-400 mr-2" />
                                 <div>
@@ -120,21 +136,21 @@ const Dashboard = () => {
                                     <p className="text-2xl">0%</p>
                                 </div>
                             </div>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <CardContent className="flex items-center justify-center p-4">
+                        </div>
+                    </div>
+                    <div>
+                        <div className="flex items-center justify-center p-4">
                             <div className="flex items-center flex-col justify-center">
-                                <ShoppingBag className="w-8 h-8 text-gray-400 mr-2" />
+                                <ShoppingBag className="w-6 h-6 text-gray-400 mr-2" />
                                 <div>
                                     <p className="text-sm text-gray-500">30 days sales</p>
                                     <p className="text-2xl">0</p>
                                 </div>
                             </div>
-                        </CardContent>
-                    </Card>
-                    <Card className="outline-none">
-                        <CardContent className="flex items-center justify-center p-4 ">
+                        </div>
+                    </div>
+                    <div className="outline-none">
+                        <div className="flex items-center justify-center p-4 ">
                             <div className="flex items-center flex-col justify-center">
                                 <Clock className="w-6 h-6 text-gray-400 mr-2" />
                                 <div>
@@ -142,10 +158,10 @@ const Dashboard = () => {
                                     <p className="text-2xl items-center">0<sub className='text-sm'>min</sub></p>
                                 </div>
                             </div>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <CardContent className="flex items-center justify-center p-4">
+                        </div>
+                    </div>
+                    <div>
+                        <div className="flex items-center justify-center p-4">
                             <div className="flex items-center flex-col justify-center">
                                 <BookOpen className="w-6 h-6 text-gray-400 mr-2" />
                                 <div>
@@ -153,21 +169,21 @@ const Dashboard = () => {
                                     <p className="text-2xl">0</p>
                                 </div>
                             </div>
-                        </CardContent>
-                    </Card>
-                    <Card>
-                        <CardContent className="flex items-center justify-center p-4">
+                        </div>
+                    </div>
+                    <div>
+                        <div className="flex items-center justify-center p-4">
                             <div className="flex items-center flex-col justify-center">
                                 <Tag className="w-6 h-6 text-gray-400 mr-2" />
                                 <div>
-                                    <p className="text-sm text-gray-500 text-center">Course categories</p>
+                                    <p className="text-sm text-gray-500 text-center"><pre>Course categories</pre> </p>
                                     <p className="text-2xl">0</p>
                                 </div>
                             </div>
-                        </CardContent>
-                    </Card>
-                </div>
-            </div>
+                        </div>
+                    </div>
+                </CardContent>
+            </Card>
             <div className="grid grid-cols-4  gap-4">
                 <div>
                     <Card className='h-[10rem]'>
@@ -188,15 +204,12 @@ const Dashboard = () => {
                                     <p className="text-sm text-gray-500">24 minutes ago</p>
                                 </div>
                             </div>
-                            <div>
-                                Button
-                            </div>
                         </CardContent>
                     </Card>
 
                     <CalculatorContainer></CalculatorContainer>
                 </div>
-                <Card>
+                {/* <Card>
                     <CardHeader>
                         <h3 className="text-lg font-semibold">How to sell courses blog</h3>
                     </CardHeader>
@@ -210,8 +223,9 @@ const Dashboard = () => {
                             ))}
                         </ul>
                     </CardContent>
-                </Card>
-                <Card className='h-[10rem]'>
+                </Card> */}
+                <BlogPostCard></BlogPostCard>
+                <Card className='h-[10rem] w-[15rem] ml-10'>
                     <CardHeader className='flex flex-row justify-start items-center'>
                         <img src={heartbeat} alt="" height={30} width={30} />
                         <h4 className='ml-2'>Event log</h4>

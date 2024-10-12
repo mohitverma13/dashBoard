@@ -20,7 +20,7 @@ export default function CalculatorContainer() {
             <CardHeader className='flex flex-row justify-start items-center'>
                 <Dialog>
                     <DialogTrigger asChild>
-                        <Button variant="outline">Open Mutual Fund Calculator</Button>
+                        <Button className='bg-slate-800 text-white' variant="outline">Open Mutual Fund Calculator</Button>
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[425px] md:max-w-[700px] lg:max-w-[900px]">
                         <MutualFundCalculator />
@@ -31,8 +31,9 @@ export default function CalculatorContainer() {
                 <Button
                     variant="outline"
                     onClick={() => setIsShareModalOpen(true)}
+                    className='bg-slate-500'
                 >
-                    <Share className="mr-2 h-4 w-4" /> Share
+                    <Share className="mr-2 h-4 w-4" /> Invite
                 </Button>
             </CardContent>
 
