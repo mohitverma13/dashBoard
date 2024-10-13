@@ -23,3 +23,8 @@ install the node modules
 "npm run dev" to start the project
 ```
     
+## Screenshots
+
+![screencapture-localhost-5173-2024-10-13-13_52_45](https://github.com/user-attachments/assets/49c7caae-006f-4e50-b7b1-933d06cdb0e5)
+
+![screencapture-localhost-5173-2024-10-13-14_04_33](https://github.com/user-attachments/assets/54677815-653a-4766-bb27-082ef20c8f8e)
